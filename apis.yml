@@ -22,9 +22,6 @@ image: >-
 access: 3rd-Party
 created: 2024/3/30
 modified: '2024-12-22'
-overlays:
-  - url: overlays/apis-io-search.yml
-    type: APIs.io Search
 position: Consuming
 description: >-
   World countries, states, regions, provinces, cities, and towns in JSON, SQL,
