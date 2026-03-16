@@ -1,5 +1,5 @@
 aid: country-state-city-api
-url: https://example.com/apis/country-state-city-api.yml
+url: https://raw.githubusercontent.com/api-evangelist/country-state-city-api/refs/heads/main/apis.yml
 apis:
   - aid: country-state-city-api:country-state-city-api
     name: Country State City API
@@ -20,7 +20,7 @@ image: >-
   https://kinlane-productions2.s3.amazonaws.com/apis-json-icons/country-state-city-api.png
 access: 3rd-Party
 created: 2024/3/30
-modified: '2024-12-22'
+modified: '2026-03-16'
 position: Consuming
 description: >-
   World countries, states, regions, provinces, cities, and towns in JSON, SQL,
@@ -28,6 +28,6 @@ description: >-
   ISO3, Country Code, Phone Code, Capital, Native Language, Time zones,
   Latitude, Longitude, Region, Subregion, Flag Emoji, and Currency.
 maintainers:
-  - FN: API Evangelist
-    email: info@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
 specificationVersion: '0.16'
