@@ -12,8 +12,8 @@ apis:
       zones,Latitude, Longitude, Region, Subregion, Flag Emoji, and Currency.
 name: Country State City API
 tags:
-  - Countries
   - Cities
+  - Countries
   - States
 type: Contract
 image: >-
