@@ -1,0 +1,304 @@
+openapi: 3.1.0
+info:
+  title: Country State City API
+  description: >-
+    The Country State City API exposes a global geographical reference dataset
+    of 247+ countries, 5,000+ states / provinces, and 150,000+ cities with ISO
+    codes, phone codes, currencies, native names, regions, sub-regions,
+    coordinates, time zones, and flag emoji. Endpoints are read-only JSON
+    REST resources authenticated with the X-CSCAPI-KEY header.
+  version: '1.0'
+  contact:
+    name: Country State City API
+    url: https://docs.countrystatecity.in/
+externalDocs:
+  description: Country State City API Documentation
+  url: https://docs.countrystatecity.in/api/introduction
+servers:
+  - url: https://api.countrystatecity.in/v1
+    description: Country State City API production
+security:
+  - ApiKeyAuth: []
+tags:
+  - name: Countries
+    description: Country reference data including ISO codes, currencies, phone codes, and regions.
+  - name: States
+    description: State, province, and region reference data scoped by country.
+  - name: Cities
+    description: City reference data with coordinates and time zones, scoped by country and state.
+paths:
+  /countries:
+    get:
+      operationId: listCountries
+      summary: List all countries
+      description: Returns the full list of countries with ISO2 / ISO3 codes, phone codes, capitals, native names, regions, currencies, and flag emoji.
+      tags:
+        - Countries
+      responses:
+        '200':
+          description: A list of country resources.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Country'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /countries/{ciso}:
+    get:
+      operationId: getCountry
+      summary: Get a country by ISO2 code
+      tags:
+        - Countries
+      parameters:
+        - name: ciso
+          in: path
+          required: true
+          description: ISO 3166-1 alpha-2 country code.
+          schema:
+            type: string
+            minLength: 2
+            maxLength: 2
+      responses:
+        '200':
+          description: A single country resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Country'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /countries/{ciso}/states:
+    get:
+      operationId: listStatesByCountry
+      summary: List states for a country
+      tags:
+        - States
+      parameters:
+        - name: ciso
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of state resources scoped to the given country.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/State'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /countries/{ciso}/states/{siso}:
+    get:
+      operationId: getStateByCountryAndCode
+      summary: Get a state by country and state ISO codes
+      tags:
+        - States
+      parameters:
+        - name: ciso
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: siso
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A single state resource.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/State'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /countries/{ciso}/states/{siso}/cities:
+    get:
+      operationId: listCitiesByCountryAndState
+      summary: List cities in a country and state
+      tags:
+        - Cities
+      parameters:
+        - name: ciso
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: siso
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of city resources scoped to the country and state.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/City'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /countries/{ciso}/cities:
+    get:
+      operationId: listCitiesByCountry
+      summary: List cities for a country
+      tags:
+        - Cities
+      parameters:
+        - name: ciso
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of city resources scoped to the country.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/City'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /states:
+    get:
+      operationId: listStates
+      summary: List all states
+      tags:
+        - States
+      responses:
+        '200':
+          description: A list of all state resources.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/State'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /states/{sid}/cities:
+    get:
+      operationId: listCitiesByState
+      summary: List cities for a state by numeric state id
+      tags:
+        - Cities
+      parameters:
+        - name: sid
+          in: path
+          required: true
+          description: Numeric state identifier.
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A list of city resources scoped to the state.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/City'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /cities:
+    get:
+      operationId: listCities
+      summary: List all cities
+      tags:
+        - Cities
+      responses:
+        '200':
+          description: A list of city resources.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/City'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-CSCAPI-KEY
+  responses:
+    Unauthorized:
+      description: Missing or invalid X-CSCAPI-KEY.
+    NotFound:
+      description: Resource not found.
+  schemas:
+    Country:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        iso2:
+          type: string
+        iso3:
+          type: string
+        phonecode:
+          type: string
+        capital:
+          type: string
+        currency:
+          type: string
+        native:
+          type: string
+        emoji:
+          type: string
+        region:
+          type: string
+        subregion:
+          type: string
+        latitude:
+          type: string
+        longitude:
+          type: string
+    State:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        iso2:
+          type: string
+        country_code:
+          type: string
+        latitude:
+          type: string
+        longitude:
+          type: string
+    City:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        latitude:
+          type: string
+        longitude:
+          type: string

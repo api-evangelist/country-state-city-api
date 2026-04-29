@@ -1,0 +1,35 @@
+name: Country State City API Vocabulary
+description: >-
+  Controlled vocabulary of geographic concepts and resource attributes
+  exposed by the Country State City API.
+url: https://docs.countrystatecity.in/api/introduction
+version: '1.0'
+modified: '2026-04-28'
+concepts:
+  - name: Country
+    description: A sovereign nation identified by ISO 3166-1 alpha-2 (iso2) and alpha-3 (iso3) codes.
+  - name: State
+    description: A first-level administrative subdivision of a country (state, province, region, or territory).
+  - name: City
+    description: A populated place within a country and optionally a state, with latitude and longitude.
+  - name: Region
+    description: A continent-scale grouping such as Africa, Americas, Asia, Europe, or Oceania.
+  - name: Subregion
+    description: A finer continent grouping such as Western Europe or South-Eastern Asia.
+  - name: ISO 3166-1 alpha-2
+    description: Two-letter country code used as the canonical key in this API.
+  - name: ISO 3166-1 alpha-3
+    description: Three-letter country code provided alongside iso2 on country resources.
+  - name: Phone Code
+    description: International dialing prefix associated with a country.
+  - name: Currency
+    description: ISO 4217 currency code commonly associated with a country.
+  - name: Native Name
+    description: The name of a country in its native language.
+  - name: Flag Emoji
+    description: Unicode emoji representation of the national flag.
+  - name: Latitude / Longitude
+    description: Geographic coordinates in decimal degrees included on country, state, and city resources.
+authentication:
+  - name: X-CSCAPI-KEY
+    description: HTTP request header that conveys the API key for every authenticated call.

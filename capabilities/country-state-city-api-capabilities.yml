@@ -1,0 +1,67 @@
+name: Country State City API Capabilities
+description: >-
+  Workflow capabilities exposed by the Country State City API for hierarchical
+  geographic reference data covering countries, states, and cities.
+url: https://docs.countrystatecity.in/api/introduction
+version: '1.0'
+modified: '2026-04-28'
+api: Country State City API
+baseURL: https://api.countrystatecity.in/v1
+capabilities:
+  - name: Country Reference Lookup
+    description: Retrieve all countries or a single country with ISO codes, currency, capital, region, and flag.
+    operations:
+      - listCountries
+      - getCountry
+    inputs:
+      - ISO2 country code
+    outputs:
+      - country resource
+  - name: State and Province Lookup
+    description: Retrieve states, provinces, or regions globally or scoped to a country.
+    operations:
+      - listStates
+      - listStatesByCountry
+      - getStateByCountryAndCode
+    inputs:
+      - ISO2 country code
+      - state code or id
+    outputs:
+      - state resource
+  - name: City Lookup
+    description: Retrieve cities globally, by country, by country-and-state, or by numeric state id.
+    operations:
+      - listCities
+      - listCitiesByCountry
+      - listCitiesByCountryAndState
+      - listCitiesByState
+    inputs:
+      - country and state codes
+    outputs:
+      - city resource with coordinates
+  - name: Hierarchical Drill-Down
+    description: Walk Country to State to City via the canonical ISO-coded paths.
+    operations:
+      - getCountry
+      - listStatesByCountry
+      - listCitiesByCountryAndState
+    inputs:
+      - country and state codes
+    outputs:
+      - hierarchical region tree
+useCases:
+  - name: Address Form Population
+    description: Cascade country, state, and city dropdowns in checkout and onboarding forms.
+    capabilities:
+      - Country Reference Lookup
+      - State and Province Lookup
+      - City Lookup
+  - name: Geographic Analytics Enrichment
+    description: Enrich event and customer data with ISO codes, regions, and coordinates.
+    capabilities:
+      - Country Reference Lookup
+      - Hierarchical Drill-Down
+  - name: Localised Pricing and Tax
+    description: Determine country and currency for pricing and tax decisions at runtime.
+    capabilities:
+      - Country Reference Lookup
