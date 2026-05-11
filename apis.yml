@@ -87,6 +87,84 @@ common:
     url: https://countrystatecity.in/terms/
   - type: Vocabulary
     url: vocabulary/country-state-city-api-vocabulary.yml
+  - type: Integrations
+    url: https://countrystatecity.in/integrations
+integrations:
+  - name: Hk
+  - name: Raj Maurya
+  - name: Zahid Farooq
+  - name: The ICT Hub
+  - name: Sumit Sahni
+  - name: Kent Noetico
+  - name: Johnson Mercy
+  - name: Ed Seffrin
+  - name: Elias Sanchez
+  - name: Shreyash Shinde
+  - name: Adesoji Adesesan
+  - name: Mohamed Elsayed
+  - name: Edwin Gah
+  - name: Oluwadamilola Samuel
+  - name: Tyke
+  - name: Ashok GV
+  - name: Danu Rahadi
+  - name: Juvance FITAHIANJANAHARY
+  - name: Andry Razafinjatovo
+  - name: Sagar Sonara
+  - name: Rohit Singh
+  - name: Muniraj M
+  - name: Vinay P
+  - name: Tini NK
+  - name: Daniel Jaramillo
+  - name: Larson Jaide
+  - name: Zakiullah Khan
+  - name: Vishal Shah
+  - name: Victory Onorhime
+  - name: Amal K Jose
+  - name: Nikhil Kamboj
+  - name: Mahmudul Hasan Sagar
+  - name: Siril Pappula
+  - name: Cedric Borreguín
+  - name: Brendan
+  - name: Ameer Hamza
+  - name: Johan Walhout
+  - name: Akash
+  - name: Hiren Chauhan
+  - name: BRANDON LAKINYU
+  - name: Sonu Kumar
+  - name: Atul j
+  - name: Mike Lettona
+  - name: Manish Raj
+  - name: Kailash G
+  - name: Mo Kakwan
+  - name: Hanish Rao
+  - name: Grace Frank
+  - name: Vishal Rana
+  - name: Tushar Agarwal
+  - name: Akshay Rai Priyadarshi
+  - name: Shahzaib Minhas
+  - name: Bendicht Eggimann
+  - name: Bodnariu Daniel-Iustin
+  - name: Magio
+  - name: Coding Psycho
+  - name: Douglas Huertas
+  - name: Jesus David Santiago Jarava
+  - name: Shivam
+  - name: Gabriel Rajendran
+  - name: Muhammed Balta
+  - name: souren
+  - name: gurjari
+  - name: Omair
+  - name: Jamtech Pvt. Ltd.
+  - name: Perekpo Paulinus Emmanuel
+  - name: bhaskar sengupta
+  - name: Onur Gösteriş
+  - name: Gabriel
+  - name: Amol Shah
+  - name: Sabit bin hamid
+  - name: Carlos Arenas
+  - name: Guille Acosta
+  - name: Thiago Oliveira
+  - name: Elias Mamo
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
