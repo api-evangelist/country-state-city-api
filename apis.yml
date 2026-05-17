@@ -1,6 +1,6 @@
 aid: country-state-city-api
 name: Country State City API
-x-type: company
+kind: company
 description: >-
   The Country State City API is a global geographic reference dataset and
   REST API published by countrystatecity.in. It exposes 247+ countries,
