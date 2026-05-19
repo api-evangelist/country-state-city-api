@@ -1,0 +1,160 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Country State City API — States
+  description: 'Country State City API — States. 3 operations. Lead operation: List states for a country. Self-contained Naftiko
+    capability covering one Country State City Api business surface.'
+  tags:
+  - Country State City Api
+  - States
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    COUNTRY_STATE_CITY_API_API_KEY: COUNTRY_STATE_CITY_API_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: country-state-city-states
+    baseUri: https://api.countrystatecity.in/v1
+    description: Country State City API — States business capability. Self-contained, no shared references.
+    resources:
+    - name: countries-ciso-states
+      path: /countries/{ciso}/states
+      operations:
+      - name: liststatesbycountry
+        method: GET
+        description: List states for a country
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ciso
+          in: path
+          type: string
+          required: true
+    - name: countries-ciso-states-siso
+      path: /countries/{ciso}/states/{siso}
+      operations:
+      - name: getstatebycountryandcode
+        method: GET
+        description: Get a state by country and state ISO codes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ciso
+          in: path
+          type: string
+          required: true
+        - name: siso
+          in: path
+          type: string
+          required: true
+    - name: states
+      path: /states
+      operations:
+      - name: liststates
+        method: GET
+        description: List all states
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: X-CSCAPI-KEY
+      value: '{{env.COUNTRY_STATE_CITY_API_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: country-state-city-states-rest
+    port: 8080
+    description: REST adapter for Country State City API — States. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/countries/{ciso}/states
+      name: countries-ciso-states
+      description: REST surface for countries-ciso-states.
+      operations:
+      - method: GET
+        name: liststatesbycountry
+        description: List states for a country
+        call: country-state-city-states.liststatesbycountry
+        with:
+          ciso: rest.ciso
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/countries/{ciso}/states/{siso}
+      name: countries-ciso-states-siso
+      description: REST surface for countries-ciso-states-siso.
+      operations:
+      - method: GET
+        name: getstatebycountryandcode
+        description: Get a state by country and state ISO codes
+        call: country-state-city-states.getstatebycountryandcode
+        with:
+          ciso: rest.ciso
+          siso: rest.siso
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/states
+      name: states
+      description: REST surface for states.
+      operations:
+      - method: GET
+        name: liststates
+        description: List all states
+        call: country-state-city-states.liststates
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: country-state-city-states-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Country State City API — States. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-states-country
+      description: List states for a country
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: country-state-city-states.liststatesbycountry
+      with:
+        ciso: tools.ciso
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-state-country-and-state
+      description: Get a state by country and state ISO codes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: country-state-city-states.getstatebycountryandcode
+      with:
+        ciso: tools.ciso
+        siso: tools.siso
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: list-all-states
+      description: List all states
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: country-state-city-states.liststates
+      outputParameters:
+      - type: object
+        mapping: $.

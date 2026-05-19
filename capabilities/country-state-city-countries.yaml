@@ -1,0 +1,114 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Country State City API — Countries
+  description: 'Country State City API — Countries. 2 operations. Lead operation: List all countries. Self-contained Naftiko
+    capability covering one Country State City Api business surface.'
+  tags:
+  - Country State City Api
+  - Countries
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    COUNTRY_STATE_CITY_API_API_KEY: COUNTRY_STATE_CITY_API_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: country-state-city-countries
+    baseUri: https://api.countrystatecity.in/v1
+    description: Country State City API — Countries business capability. Self-contained, no shared references.
+    resources:
+    - name: countries
+      path: /countries
+      operations:
+      - name: listcountries
+        method: GET
+        description: List all countries
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: countries-ciso
+      path: /countries/{ciso}
+      operations:
+      - name: getcountry
+        method: GET
+        description: Get a country by ISO2 code
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ciso
+          in: path
+          type: string
+          description: ISO 3166-1 alpha-2 country code.
+          required: true
+    authentication:
+      type: apikey
+      key: X-CSCAPI-KEY
+      value: '{{env.COUNTRY_STATE_CITY_API_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: country-state-city-countries-rest
+    port: 8080
+    description: REST adapter for Country State City API — Countries. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/countries
+      name: countries
+      description: REST surface for countries.
+      operations:
+      - method: GET
+        name: listcountries
+        description: List all countries
+        call: country-state-city-countries.listcountries
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/countries/{ciso}
+      name: countries-ciso
+      description: REST surface for countries-ciso.
+      operations:
+      - method: GET
+        name: getcountry
+        description: Get a country by ISO2 code
+        call: country-state-city-countries.getcountry
+        with:
+          ciso: rest.ciso
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: country-state-city-countries-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Country State City API — Countries. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: list-all-countries
+      description: List all countries
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: country-state-city-countries.listcountries
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: get-country-iso2-code
+      description: Get a country by ISO2 code
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: country-state-city-countries.getcountry
+      with:
+        ciso: tools.ciso
+      outputParameters:
+      - type: object
+        mapping: $.

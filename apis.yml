@@ -1,170 +1,168 @@
 aid: country-state-city-api
 name: Country State City API
 kind: company
-description: >-
-  The Country State City API is a global geographic reference dataset and
-  REST API published by countrystatecity.in. It exposes 247+ countries,
-  5,000+ states / provinces, and 150,000+ cities with ISO 3166 codes, phone
-  codes, capitals, currencies, native names, regions, sub-regions,
-  coordinates, time zones, and flag emoji. The data is also distributed as
-  downloadable JSON, SQL, PostgreSQL, SQLite, XML, YAML, and CSV bundles for
-  offline use, and the live API is authenticated with the X-CSCAPI-KEY
+description: The Country State City API is a global geographic reference dataset and REST API published by countrystatecity.in.
+  It exposes 247+ countries, 5,000+ states / provinces, and 150,000+ cities with ISO 3166 codes, phone codes, capitals, currencies,
+  native names, regions, sub-regions, coordinates, time zones, and flag emoji. The data is also distributed as downloadable
+  JSON, SQL, PostgreSQL, SQLite, XML, YAML, and CSV bundles for offline use, and the live API is authenticated with the X-CSCAPI-KEY
   header from a free developer plan.
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/country-state-city-api/refs/heads/main/apis.yml
+url: https://raw.githubusercontent.com/api-evangelist/country-state-city-api/refs/heads/main/apis.yml
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json-icons/country-state-city-api.png
 type: Index
 access: Public
 position: Provider
 tags:
-  - Capitals
-  - Cities
-  - Countries
-  - Currencies
-  - Geography
-  - Geolocation
-  - ISO 3166
-  - JSON
-  - Phone Codes
-  - Provinces
-  - Reference Data
-  - Regions
-  - States
-  - Time Zones
+- Capitals
+- Cities
+- Countries
+- Currencies
+- Geography
+- Geolocation
+- ISO 3166
+- JSON
+- Phone Codes
+- Provinces
+- Reference Data
+- Regions
+- States
+- Time Zones
 created: '2024-03-30'
-modified: '2026-04-28'
+modified: '2026-05-19'
 specificationVersion: '0.20'
 apis:
-  - aid: country-state-city-api:country-state-city-api
-    name: Country State City API
-    description: >-
-      REST API exposing world countries, states, regions, provinces, and
-      cities with ISO2 / ISO3 codes, country code, phone code, capital,
-      native language, time zones, latitude, longitude, region, subregion,
-      flag emoji, and currency. Authentication is via the X-CSCAPI-KEY
-      header.
-    humanURL: https://docs.countrystatecity.in/
-    baseURL: https://api.countrystatecity.in/v1
-    properties:
-      - type: Documentation
-        url: https://docs.countrystatecity.in/
-      - type: APIIntroduction
-        url: https://docs.countrystatecity.in/api/introduction
-      - type: SignUp
-        url: https://app.countrystatecity.in/
-      - type: OpenAPI
-        url: openapi/country-state-city-api-openapi.yml
-      - type: Rules
-        url: rules/country-state-city-api-rules.yml
-      - type: Capabilities
-        url: capabilities/country-state-city-api-capabilities.yml
-    tags:
-      - Cities
-      - Countries
-      - ISO 3166
-      - REST
-      - States
-common:
-  - type: Website
-    url: https://countrystatecity.in/
+- aid: country-state-city-api:country-state-city-api
+  name: Country State City API
+  description: REST API exposing world countries, states, regions, provinces, and cities with ISO2 / ISO3 codes, country code,
+    phone code, capital, native language, time zones, latitude, longitude, region, subregion, flag emoji, and currency. Authentication
+    is via the X-CSCAPI-KEY header.
+  humanURL: https://docs.countrystatecity.in/
+  baseURL: https://api.countrystatecity.in/v1
+  properties:
   - type: Documentation
     url: https://docs.countrystatecity.in/
   - type: APIIntroduction
     url: https://docs.countrystatecity.in/api/introduction
-  - type: Console
+  - type: SignUp
     url: https://app.countrystatecity.in/
-  - type: Pricing
-    url: https://countrystatecity.in/pricing/
-  - type: Downloads
-    url: https://countrystatecity.in/downloads/
-  - type: GitHubRepository
-    url: https://github.com/dr5hn/countries-states-cities-database
-  - type: Contact
-    url: https://countrystatecity.in/contact/
-  - type: PrivacyPolicy
-    url: https://countrystatecity.in/privacy-policy/
-  - type: TermsOfService
-    url: https://countrystatecity.in/terms/
-  - type: Vocabulary
-    url: vocabulary/country-state-city-api-vocabulary.yml
-  - type: Integrations
-    url: https://countrystatecity.in/integrations
+  - type: OpenAPI
+    url: openapi/country-state-city-api-openapi.yml
+  - type: Rules
+    url: rules/country-state-city-api-rules.yml
+  - type: Capabilities
+    url: capabilities/country-state-city-api-capabilities.yml
+  - type: NaftikoCapability
+    url: capabilities/country-state-city-cities.yaml
+  - type: NaftikoCapability
+    url: capabilities/country-state-city-countries.yaml
+  - type: NaftikoCapability
+    url: capabilities/country-state-city-states.yaml
+  tags:
+  - Cities
+  - Countries
+  - ISO 3166
+  - REST
+  - States
+common:
+- type: Website
+  url: https://countrystatecity.in/
+- type: Documentation
+  url: https://docs.countrystatecity.in/
+- type: APIIntroduction
+  url: https://docs.countrystatecity.in/api/introduction
+- type: Console
+  url: https://app.countrystatecity.in/
+- type: Pricing
+  url: https://countrystatecity.in/pricing/
+- type: Downloads
+  url: https://countrystatecity.in/downloads/
+- type: GitHubRepository
+  url: https://github.com/dr5hn/countries-states-cities-database
+- type: Contact
+  url: https://countrystatecity.in/contact/
+- type: PrivacyPolicy
+  url: https://countrystatecity.in/privacy-policy/
+- type: TermsOfService
+  url: https://countrystatecity.in/terms/
+- type: Vocabulary
+  url: vocabulary/country-state-city-api-vocabulary.yml
+- type: Integrations
+  url: https://countrystatecity.in/integrations
 integrations:
-  - name: Hk
-  - name: Raj Maurya
-  - name: Zahid Farooq
-  - name: The ICT Hub
-  - name: Sumit Sahni
-  - name: Kent Noetico
-  - name: Johnson Mercy
-  - name: Ed Seffrin
-  - name: Elias Sanchez
-  - name: Shreyash Shinde
-  - name: Adesoji Adesesan
-  - name: Mohamed Elsayed
-  - name: Edwin Gah
-  - name: Oluwadamilola Samuel
-  - name: Tyke
-  - name: Ashok GV
-  - name: Danu Rahadi
-  - name: Juvance FITAHIANJANAHARY
-  - name: Andry Razafinjatovo
-  - name: Sagar Sonara
-  - name: Rohit Singh
-  - name: Muniraj M
-  - name: Vinay P
-  - name: Tini NK
-  - name: Daniel Jaramillo
-  - name: Larson Jaide
-  - name: Zakiullah Khan
-  - name: Vishal Shah
-  - name: Victory Onorhime
-  - name: Amal K Jose
-  - name: Nikhil Kamboj
-  - name: Mahmudul Hasan Sagar
-  - name: Siril Pappula
-  - name: Cedric Borreguín
-  - name: Brendan
-  - name: Ameer Hamza
-  - name: Johan Walhout
-  - name: Akash
-  - name: Hiren Chauhan
-  - name: BRANDON LAKINYU
-  - name: Sonu Kumar
-  - name: Atul j
-  - name: Mike Lettona
-  - name: Manish Raj
-  - name: Kailash G
-  - name: Mo Kakwan
-  - name: Hanish Rao
-  - name: Grace Frank
-  - name: Vishal Rana
-  - name: Tushar Agarwal
-  - name: Akshay Rai Priyadarshi
-  - name: Shahzaib Minhas
-  - name: Bendicht Eggimann
-  - name: Bodnariu Daniel-Iustin
-  - name: Magio
-  - name: Coding Psycho
-  - name: Douglas Huertas
-  - name: Jesus David Santiago Jarava
-  - name: Shivam
-  - name: Gabriel Rajendran
-  - name: Muhammed Balta
-  - name: souren
-  - name: gurjari
-  - name: Omair
-  - name: Jamtech Pvt. Ltd.
-  - name: Perekpo Paulinus Emmanuel
-  - name: bhaskar sengupta
-  - name: Onur Gösteriş
-  - name: Gabriel
-  - name: Amol Shah
-  - name: Sabit bin hamid
-  - name: Carlos Arenas
-  - name: Guille Acosta
-  - name: Thiago Oliveira
-  - name: Elias Mamo
+- name: Hk
+- name: Raj Maurya
+- name: Zahid Farooq
+- name: The ICT Hub
+- name: Sumit Sahni
+- name: Kent Noetico
+- name: Johnson Mercy
+- name: Ed Seffrin
+- name: Elias Sanchez
+- name: Shreyash Shinde
+- name: Adesoji Adesesan
+- name: Mohamed Elsayed
+- name: Edwin Gah
+- name: Oluwadamilola Samuel
+- name: Tyke
+- name: Ashok GV
+- name: Danu Rahadi
+- name: Juvance FITAHIANJANAHARY
+- name: Andry Razafinjatovo
+- name: Sagar Sonara
+- name: Rohit Singh
+- name: Muniraj M
+- name: Vinay P
+- name: Tini NK
+- name: Daniel Jaramillo
+- name: Larson Jaide
+- name: Zakiullah Khan
+- name: Vishal Shah
+- name: Victory Onorhime
+- name: Amal K Jose
+- name: Nikhil Kamboj
+- name: Mahmudul Hasan Sagar
+- name: Siril Pappula
+- name: Cedric Borreguín
+- name: Brendan
+- name: Ameer Hamza
+- name: Johan Walhout
+- name: Akash
+- name: Hiren Chauhan
+- name: BRANDON LAKINYU
+- name: Sonu Kumar
+- name: Atul j
+- name: Mike Lettona
+- name: Manish Raj
+- name: Kailash G
+- name: Mo Kakwan
+- name: Hanish Rao
+- name: Grace Frank
+- name: Vishal Rana
+- name: Tushar Agarwal
+- name: Akshay Rai Priyadarshi
+- name: Shahzaib Minhas
+- name: Bendicht Eggimann
+- name: Bodnariu Daniel-Iustin
+- name: Magio
+- name: Coding Psycho
+- name: Douglas Huertas
+- name: Jesus David Santiago Jarava
+- name: Shivam
+- name: Gabriel Rajendran
+- name: Muhammed Balta
+- name: souren
+- name: gurjari
+- name: Omair
+- name: Jamtech Pvt. Ltd.
+- name: Perekpo Paulinus Emmanuel
+- name: bhaskar sengupta
+- name: Onur Gösteriş
+- name: Gabriel
+- name: Amol Shah
+- name: Sabit bin hamid
+- name: Carlos Arenas
+- name: Guille Acosta
+- name: Thiago Oliveira
+- name: Elias Mamo
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
