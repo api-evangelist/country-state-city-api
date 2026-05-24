@@ -87,6 +87,8 @@ common:
   url: vocabulary/country-state-city-api-vocabulary.yml
 - type: Integrations
   url: https://countrystatecity.in/integrations
+- type: LLMsTxt
+  url: https://docs.countrystatecity.in/llms.txt
 integrations:
 - name: Hk
 - name: Raj Maurya
