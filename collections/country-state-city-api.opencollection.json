@@ -1,0 +1,195 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Country State City API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-CSCAPI-KEY",
+      "value": "{{X-CSCAPI-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Countries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/countries"
+          },
+          "docs": "Returns the full list of countries with ISO2 / ISO3 codes, phone codes, capitals, native names, regions, currencies, and flag emoji."
+        },
+        {
+          "info": {
+            "name": "Get a country by ISO2 code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/countries/:ciso",
+            "params": [
+              {
+                "name": "ciso",
+                "value": "",
+                "type": "path",
+                "description": "ISO 3166-1 alpha-2 country code."
+              }
+            ]
+          },
+          "docs": "Get a country by ISO2 code"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "States",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List states for a country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/countries/:ciso/states",
+            "params": [
+              {
+                "name": "ciso",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List states for a country"
+        },
+        {
+          "info": {
+            "name": "Get a state by country and state ISO codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/countries/:ciso/states/:siso",
+            "params": [
+              {
+                "name": "ciso",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "siso",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a state by country and state ISO codes"
+        },
+        {
+          "info": {
+            "name": "List all states",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/states"
+          },
+          "docs": "List all states"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Cities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List cities in a country and state",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/countries/:ciso/states/:siso/cities",
+            "params": [
+              {
+                "name": "ciso",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "siso",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List cities in a country and state"
+        },
+        {
+          "info": {
+            "name": "List cities for a country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/countries/:ciso/cities",
+            "params": [
+              {
+                "name": "ciso",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List cities for a country"
+        },
+        {
+          "info": {
+            "name": "List cities for a state by numeric state id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/states/:sid/cities",
+            "params": [
+              {
+                "name": "sid",
+                "value": "",
+                "type": "path",
+                "description": "Numeric state identifier."
+              }
+            ]
+          },
+          "docs": "List cities for a state by numeric state id"
+        },
+        {
+          "info": {
+            "name": "List all cities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/cities"
+          },
+          "docs": "List all cities"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
