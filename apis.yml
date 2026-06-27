@@ -44,7 +44,7 @@ apis:
         url: https://docs.countrystatecity.in/
       - type: APIIntroduction
         url: https://docs.countrystatecity.in/api/introduction
-      - type: SignUp
+      - type: Signup
         url: https://app.countrystatecity.in/
       - type: OpenAPI
         url: openapi/country-state-city-api-openapi.yml
@@ -83,7 +83,7 @@ common:
     url: vocabulary/country-state-city-api-vocabulary.yml
   - type: Integrations
     url: https://countrystatecity.in/integrations
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.countrystatecity.in/llms.txt
 integrations:
   - name: Hk
