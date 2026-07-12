@@ -59,6 +59,10 @@ apis:
       - REST
       - States
 common:
+  - type: DomainSecurity
+    url: security/country-state-city-api-domain-security.yml
+  - type: Authentication
+    url: authentication/country-state-city-api-authentication.yml
   - type: Website
     url: https://countrystatecity.in/
   - type: Documentation
