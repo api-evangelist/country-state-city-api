@@ -59,6 +59,8 @@ apis:
       - REST
       - States
 common:
+  - type: AgenticAccess
+    url: agentic-access/country-state-city-api-agentic-access.yml
   - type: DomainSecurity
     url: security/country-state-city-api-domain-security.yml
   - type: Authentication
