@@ -1,0 +1,137 @@
+openapi: 3.1.0
+info:
+  title: Country State City Cities API
+  description: The Country State City API exposes a global geographical reference dataset of 247+ countries, 5,000+ states / provinces, and 150,000+ cities with ISO codes, phone codes, currencies, native names, regions, sub-regions, coordinates, time zones, and flag emoji. Endpoints are read-only JSON REST resources authenticated with the X-CSCAPI-KEY header.
+  version: '1.0'
+  contact:
+    name: Country State City API
+    url: https://docs.countrystatecity.in/
+servers:
+- url: https://api.countrystatecity.in/v1
+  description: Country State City API production
+security:
+- ApiKeyAuth: []
+tags:
+- name: Cities
+  description: City reference data with coordinates and time zones, scoped by country and state.
+paths:
+  /countries/{ciso}/states/{siso}/cities:
+    get:
+      operationId: listCitiesByCountryAndState
+      summary: List cities in a country and state
+      tags:
+      - Cities
+      parameters:
+      - name: ciso
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: siso
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of city resources scoped to the country and state.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/City'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /countries/{ciso}/cities:
+    get:
+      operationId: listCitiesByCountry
+      summary: List cities for a country
+      tags:
+      - Cities
+      parameters:
+      - name: ciso
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: A list of city resources scoped to the country.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/City'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /states/{sid}/cities:
+    get:
+      operationId: listCitiesByState
+      summary: List cities for a state by numeric state id
+      tags:
+      - Cities
+      parameters:
+      - name: sid
+        in: path
+        required: true
+        description: Numeric state identifier.
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: A list of city resources scoped to the state.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/City'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /cities:
+    get:
+      operationId: listCities
+      summary: List all cities
+      tags:
+      - Cities
+      responses:
+        '200':
+          description: A list of city resources.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/City'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    City:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        latitude:
+          type: string
+        longitude:
+          type: string
+  responses:
+    Unauthorized:
+      description: Missing or invalid X-CSCAPI-KEY.
+    NotFound:
+      description: Resource not found.
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-CSCAPI-KEY
+externalDocs:
+  description: Country State City API Documentation
+  url: https://docs.countrystatecity.in/api/introduction
