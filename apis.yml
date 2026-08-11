@@ -62,8 +62,6 @@ apis:
     url: https://app.countrystatecity.in/
   - type: Rules
     url: rules/country-state-city-api-rules.yml
-  - type: Capabilities
-    url: capabilities/country-state-city-api-capabilities.yml
 - aid: country-state-city-api:country-state-city-api-countries-api
   name: Country State City API Countries API
   description: Country reference data including ISO codes, currencies, phone codes, and regions.
@@ -82,8 +80,6 @@ apis:
     url: https://app.countrystatecity.in/
   - type: Rules
     url: rules/country-state-city-api-rules.yml
-  - type: Capabilities
-    url: capabilities/country-state-city-api-capabilities.yml
 - aid: country-state-city-api:country-state-city-api-states-api
   name: Country State City API States API
   description: State, province, and region reference data scoped by country.
@@ -102,9 +98,18 @@ apis:
     url: https://app.countrystatecity.in/
   - type: Rules
     url: rules/country-state-city-api-rules.yml
-  - type: Capabilities
-    url: capabilities/country-state-city-api-capabilities.yml
 common:
+  - type: IssueTracker
+    url: https://github.com/dr5hn/countries-states-cities-database/issues
+  - type: Releases
+    url: https://github.com/dr5hn/countries-states-cities-database/releases
+  - type: CodeOfConduct
+    url: https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/dr5hn/countries-states-cities-database/blob/master/.github/CONTRIBUTING.md
+  - type: License
+    name: ODbL-1.0
+    url: https://github.com/dr5hn/countries-states-cities-database/blob/master/LICENSE
   - type: AgenticAccess
     url: agentic-access/country-state-city-api-agentic-access.yml
   - type: DomainSecurity
