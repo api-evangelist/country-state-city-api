@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Country State City Cities Countries API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-CSCAPI-KEY",
+      "value": "{{X-CSCAPI-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Countries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/countries"
+          },
+          "docs": "Returns the full list of countries with ISO2 / ISO3 codes, phone codes, capitals, native names, regions, currencies, and flag emoji."
+        },
+        {
+          "info": {
+            "name": "Get a country by ISO2 code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/countries/:ciso",
+            "params": [
+              {
+                "name": "ciso",
+                "value": "",
+                "type": "path",
+                "description": "ISO 3166-1 alpha-2 country code."
+              }
+            ]
+          },
+          "docs": "Get a country by ISO2 code"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

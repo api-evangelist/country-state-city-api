@@ -1,0 +1,355 @@
+{
+  "item": [
+    {
+      "id": "8f4e9ce8-d1cb-453e-bfd4-16bb82d711c9",
+      "name": "Countries",
+      "description": {
+        "content": "Country reference data including ISO codes, currencies, phone codes, and regions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a34408f4-6052-45e6-afcf-ef52967ca413",
+          "name": "List all countries",
+          "request": {
+            "name": "List all countries",
+            "description": {
+              "content": "Returns the full list of countries with ISO2 / ISO3 codes, phone codes, capitals, native names, regions, currencies, and flag emoji.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "countries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "318b7936-63e6-4c11-a16f-462dfd39aa50",
+              "name": "A list of country resources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CSCAPI-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 5381,\n    \"name\": \"string\",\n    \"iso2\": \"string\",\n    \"iso3\": \"string\",\n    \"phonecode\": \"string\",\n    \"capital\": \"string\",\n    \"currency\": \"string\",\n    \"native\": \"string\",\n    \"emoji\": \"string\",\n    \"region\": \"string\",\n    \"subregion\": \"string\",\n    \"latitude\": \"string\",\n    \"longitude\": \"string\"\n  },\n  {\n    \"id\": 597,\n    \"name\": \"string\",\n    \"iso2\": \"string\",\n    \"iso3\": \"string\",\n    \"phonecode\": \"string\",\n    \"capital\": \"string\",\n    \"currency\": \"string\",\n    \"native\": \"string\",\n    \"emoji\": \"string\",\n    \"region\": \"string\",\n    \"subregion\": \"string\",\n    \"latitude\": \"string\",\n    \"longitude\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "94654a07-bdc4-4c7e-a1b7-498488101f43",
+              "name": "Missing or invalid X-CSCAPI-KEY.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "countries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CSCAPI-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "34d636d1-416b-4015-9c01-cc0ad4e5d527",
+          "name": "Get a country by ISO2 code",
+          "request": {
+            "name": "Get a country by ISO2 code",
+            "description": {},
+            "url": {
+              "path": [
+                "countries",
+                ":ciso"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "ciso",
+                  "description": "(Required) ISO 3166-1 alpha-2 country code."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "675e73b1-eac7-4822-84b9-d618e0f775df",
+              "name": "A single country resource.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "countries",
+                    ":ciso"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ciso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CSCAPI-KEY",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8679,\n  \"name\": \"string\",\n  \"iso2\": \"string\",\n  \"iso3\": \"string\",\n  \"phonecode\": \"string\",\n  \"capital\": \"string\",\n  \"currency\": \"string\",\n  \"native\": \"string\",\n  \"emoji\": \"string\",\n  \"region\": \"string\",\n  \"subregion\": \"string\",\n  \"latitude\": \"string\",\n  \"longitude\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92d6051b-9324-4f6b-a6e2-d18750e2db3d",
+              "name": "Missing or invalid X-CSCAPI-KEY.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "countries",
+                    ":ciso"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ciso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CSCAPI-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ccc37f03-3e40-4fe9-960f-adb1ae1d1691",
+              "name": "Resource not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "countries",
+                    ":ciso"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "ciso",
+                      "description": "(Required) ISO 3166-1 alpha-2 country code."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "X-CSCAPI-KEY",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.countrystatecity.in/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-CSCAPI-KEY"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "55bfdc7f-79eb-4413-959b-0817dee8f735",
+    "name": "Country State City Cities Countries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Country State City API exposes a global geographical reference dataset of 247+ countries, 5,000+ states / provinces, and 150,000+ cities with ISO codes, phone codes, currencies, native names, regions, sub-regions, coordinates, time zones, and flag emoji. Endpoints are read-only JSON REST resources authenticated with the X-CSCAPI-KEY header.\n\nContact Support:\n Name: Country State City API",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Country State City Cities States API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "X-CSCAPI-KEY",
+      "value": "{{X-CSCAPI-KEY}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "States",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List states for a country",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/countries/:ciso/states",
+            "params": [
+              {
+                "name": "ciso",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List states for a country"
+        },
+        {
+          "info": {
+            "name": "Get a state by country and state ISO codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/countries/:ciso/states/:siso",
+            "params": [
+              {
+                "name": "ciso",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "siso",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a state by country and state ISO codes"
+        },
+        {
+          "info": {
+            "name": "List all states",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.countrystatecity.in/v1/states"
+          },
+          "docs": "List all states"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
