@@ -42,7 +42,7 @@ tags:
   - Time Zones
 created: '2024-03-30'
 modified: '2026-05-19'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 apis:
 - aid: country-state-city-api:country-state-city-api-cities-api
   name: Country State City API Cities API
