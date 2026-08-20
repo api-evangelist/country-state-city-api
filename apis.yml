@@ -29,6 +29,21 @@ tags:
   - Capitals
   - Cities
   - Countries
+  - Currency
+  - Geography
+  - Geolocation
+  - ISO 3166
+  - JSON
+  - Phone Codes
+  - Provinces
+  - Reference Data
+  - Regions
+  - States
+  - Timezones
+tags_raw:
+  - Capitals
+  - Cities
+  - Countries
   - Currencies
   - Geography
   - Geolocation
