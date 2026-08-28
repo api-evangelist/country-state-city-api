@@ -8,6 +8,20 @@ description: >-
   as downloadable JSON, SQL, PostgreSQL, SQLite, XML, YAML, and CSV bundles for offline use, and the live API is
   authenticated with the X-CSCAPI-KEY header from a free developer plan.
 url: https://raw.githubusercontent.com/api-evangelist/country-state-city-api/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  license: ODbL-1.0
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - license
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
