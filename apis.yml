@@ -41,7 +41,7 @@ type: Index
 access: Public
 position: Producing
 tags:
-  - Capitals
+  - Capital
   - Cities
   - Countries
   - Currency
@@ -54,7 +54,7 @@ tags:
   - Reference Data
   - Regions
   - States
-  - Timezones
+  - Timezone
 tags_raw:
   - Capitals
   - Cities
