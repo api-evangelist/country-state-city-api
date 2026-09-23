@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Country State City Cities Countries API
+  title: Country State City Countries API
   description: The Country State City API exposes a global geographical reference dataset of 247+ countries, 5,000+ states / provinces, and 150,000+ cities with ISO codes, phone codes, currencies, native names, regions, sub-regions, coordinates, time zones, and flag emoji. Endpoints are read-only JSON REST resources authenticated with the X-CSCAPI-KEY header.
   version: '1.0'
   contact:
@@ -60,11 +60,6 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    Unauthorized:
-      description: Missing or invalid X-CSCAPI-KEY.
-    NotFound:
-      description: Resource not found.
   schemas:
     Country:
       type: object
@@ -95,6 +90,11 @@ components:
           type: string
         longitude:
           type: string
+  responses:
+    NotFound:
+      description: Resource not found.
+    Unauthorized:
+      description: Missing or invalid X-CSCAPI-KEY.
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
