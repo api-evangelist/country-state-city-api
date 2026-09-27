@@ -40,6 +40,9 @@ image: https://kinlane-productions2.s3.amazonaws.com/apis-json-icons/country-sta
 type: Index
 access: Public
 position: Producing
+x-docs-platform: mintlify
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-24
 tags:
   - Capital
   - Cities

@@ -110,6 +110,11 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    NotFound:
+      description: Resource not found.
+    Unauthorized:
+      description: Missing or invalid X-CSCAPI-KEY.
   schemas:
     City:
       type: object
@@ -122,11 +127,6 @@ components:
           type: string
         longitude:
           type: string
-  responses:
-    NotFound:
-      description: Resource not found.
-    Unauthorized:
-      description: Missing or invalid X-CSCAPI-KEY.
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
