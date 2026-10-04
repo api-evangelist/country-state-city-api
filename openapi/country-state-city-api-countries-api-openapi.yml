@@ -91,10 +91,10 @@ components:
         longitude:
           type: string
   responses:
-    Unauthorized:
-      description: Missing or invalid X-CSCAPI-KEY.
     NotFound:
       description: Resource not found.
+    Unauthorized:
+      description: Missing or invalid X-CSCAPI-KEY.
   securitySchemes:
     ApiKeyAuth:
       type: apiKey
