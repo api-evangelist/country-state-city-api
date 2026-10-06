@@ -74,7 +74,7 @@ tags_raw:
   - States
   - Time Zones
 created: '2024-03-30'
-modified: '2026-05-19'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
 - aid: country-state-city-api:country-state-city-api-cities-api
@@ -132,6 +132,8 @@ apis:
   - type: Rules
     url: rules/country-state-city-api-rules.yml
 common:
+  - url: https://countrystatecity.in/blog/
+    type: Blog
   - type: IssueTracker
     url: https://github.com/dr5hn/countries-states-cities-database/issues
   - type: Releases
