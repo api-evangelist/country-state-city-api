@@ -1,4 +1,4 @@
-# Country State City API (country-state-city-api)
+# Country State City API
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,81 +66,142 @@
 
 The Country State City API is a global geographic reference dataset and REST API published by countrystatecity.in. It exposes 247+ countries, 5,000+ states / provinces, and 150,000+ cities with ISO 3166 codes, phone codes, capitals, currencies, native names, regions, sub-regions, coordinates, time zones, and flag emoji. The data is also distributed as downloadable JSON, SQL, PostgreSQL, SQLite, XML, YAML, and CSV bundles for offline use, and the live API is authenticated with the X-CSCAPI-KEY header from a free developer plan.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/country-state-city-api/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/country-state-city-api/refs/heads/main/apis.yml)
+**Areas:** Capital · Cities · Countries · Currency · Geography · Geolocation · ISO 3166 · JSON · Phone Codes · Provinces · Reference Data · Regions
 
-## Scope
+## Country State City API on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** Public
+Everything profiled for Country State City API is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/country-state-city-api/](https://apis.io/providers/country-state-city-api/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Capitals
-- Cities
-- Countries
-- Currencies
-- Geography
-- Geolocation
-- ISO 3166
-- JSON
-- Phone Codes
-- Provinces
-- Reference Data
-- Regions
-- States
-- Time Zones
+- [Country State City API Cities API](https://apis.io/apis/country-state-city-api/country-state-city-api-cities-api/) — City reference data with coordinates and time zones, scoped by country and state.
+- [Country State City API Countries API](https://apis.io/apis/country-state-city-api/country-state-city-api-countries-api/) — Country reference data including ISO codes, currencies, phone codes, and regions.
+- [Country State City API States API](https://apis.io/apis/country-state-city-api/country-state-city-api-states-api/) — State, province, and region reference data scoped by country.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-03-30
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Country State City API
+Model Context Protocol servers that expose the API to agents.
 
-REST API exposing world countries, states, regions, provinces, and cities with ISO2 / ISO3 codes, country code, phone code, capital, native language, time zones, latitude, longitude, region, subregion, flag emoji, and currency. Authentication is via the X-CSCAPI-KEY header.
+- [Moved to /providers/country-state-city-api/](https://apis.io/servers/country-state-city-api/country-state-city-api/)
 
-- **Human URL:** [https://docs.countrystatecity.in/](https://docs.countrystatecity.in/)
-- **Base URL:** `https://api.countrystatecity.in/v1`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Cities
-- Countries
-- ISO 3166
-- REST
-- States
+- [Country State City Api Agentic Access](https://apis.io/agentic-access/country-state-city-api/country-state-city-api-agentic-access/)
 
-#### Properties
+#### Vocabulary (1)
 
-- [Documentation](https://docs.countrystatecity.in/)
-- [A P I Introduction](https://docs.countrystatecity.in/api/introduction)
-- [Sign Up](https://app.countrystatecity.in/)
-- [OpenAPI](openapi/country-state-city-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/country-state-city-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/country-state-city-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Rules](rules/country-state-city-api-rules.yml)
-- [Capabilities](capabilities/country-state-city-api-capabilities.yml)
+The provider's domain terms, defined.
 
-## Common Properties
+- [Country State City API Vocabulary](https://apis.io/vocabularies/country-state-city-api/country-state-city-api-vocabulary/)
+
+#### Collections (4)
+
+Postman and Open Collection request collections.
+
+- [Country State City API](https://apis.io/collections/country-state-city-api/open-country-state-city-api/)
+- [Country State City Cities API](https://apis.io/collections/country-state-city-api/open-country-state-city-api-cities-api/)
+- [Country State City Cities Countries API](https://apis.io/collections/country-state-city-api/open-country-state-city-api-countries-api/)
+- [Country State City Cities States API](https://apis.io/collections/country-state-city-api/open-country-state-city-api-states-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Country State City API API Rules](https://apis.io/rules/country-state-city-api/country-state-city-api-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Country State City Api Authentication](https://apis.io/security/country-state-city-api/country-state-city-api-authentication/)
+- [Country State City Api Domain Security](https://apis.io/security/country-state-city-api/country-state-city-api-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Country State City Api Plans Pricing](https://apis.io/plans/country-state-city-api/country-state-city-api-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Country State City Api Rate Limits](https://apis.io/rate-limits/country-state-city-api/country-state-city-api-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Country State City Api Finops](https://apis.io/finops/country-state-city-api/country-state-city-api-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://countrystatecity.in/)
 - [Documentation](https://docs.countrystatecity.in/)
-- [A P I Introduction](https://docs.countrystatecity.in/api/introduction)
-- [Console](https://app.countrystatecity.in/)
 - [Pricing](https://countrystatecity.in/pricing/)
-- [Downloads](https://countrystatecity.in/downloads/)
-- [GitHub Repository](https://github.com/dr5hn/countries-states-cities-database)
-- [Contact](https://countrystatecity.in/contact/)
-- [Privacy Policy](https://countrystatecity.in/privacy-policy/)
-- [Terms of Service](https://countrystatecity.in/terms/)
-- [Vocabulary](vocabulary/country-state-city-api-vocabulary.yml)
-- [Integrations](https://countrystatecity.in/integrations)
-- [L L Ms Txt](https://docs.countrystatecity.in/llms.txt)
+- [Blog](https://countrystatecity.in/blog/)
+- [Terms of service](https://countrystatecity.in/terms/)
+- [Privacy policy](https://countrystatecity.in/privacy-policy/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 35.4** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 47.8 |
+| Contract governance | 25.0 |
+| Operational transparency | 28.9 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 21.1 |
+
+**Agent readiness 31.2** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | verified |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/country-state-city-api/](https://apis.io/providers/country-state-city-api/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Country State City API: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/country-state-city-api/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
